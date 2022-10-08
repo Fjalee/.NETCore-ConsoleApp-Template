@@ -8,13 +8,16 @@ My personal console app template for .NET Core
 * copy paste everything but `.git` folder
 * update NuGet packages (if needed)
 * rename solution / projects
-   * rename solution (in VS solution explorer)
-   * rename project (in VS solution explorer)
-   * rename UnitTest project (in VS solution explorer)
+  * in VS solution explorer:
+   * rename solution
+   * rename project
+   * rename UnitTest project
    * rename `namespace Template` (in VS ctrl+f)
-   * rename solution folder (in Windows file explorer)
-   * rename project folder (in Windows file explorer)
-   * rename UnitTest project folder (in Windows file explorer)
+  * in Windows file explorer:
+   * rename solution folder
+   * rename project folder
+   * rename UnitTest project folder
+  * in VS solution explorer:
    * remove all projects (in VS solution explorer)
    * add existing newly renamed projects (in VS solution explorer)
 * `local-appsettings.json`   
