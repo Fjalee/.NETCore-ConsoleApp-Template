@@ -6,7 +6,7 @@ namespace Template
     {
         public AutoMapping()
         {
-            CreateMap<ExampleObjectDto, ExampleObject>();
+            //CreateMap<ExampleObjectDto, ExampleObject>();     //delete this line (its from template)
         }
     }
 }
