@@ -36,6 +36,7 @@ namespace Template
             var config = SetupConfiguration();
 
             services
+                .AddAutoMapper(typeof(Program))
                 .Configure<AppSettingsOptions>(
                     config.GetSection("AppSettings"))
                 .Configure<TestObjectOptions>(
