@@ -1,6 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NLog;
+using NLog.Extensions.Logging;
 
 namespace Template
 {
@@ -26,6 +29,13 @@ namespace Template
                     config.GetSection("AppSettings"))
                 .Configure<TestObjectOptions>(
                     config.GetSection("TestObject"));
+
+            services.AddLogging(builder =>
+            {
+                builder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+                builder.AddNLog("nlog.config");
+            });
+            LogManager.Configuration = new NLogLoggingConfiguration(config.GetSection("NLog"));
 
             //services
             //.AddTransient<IExampleClass, ExampleClass>();             //delete this line (its from template) 
