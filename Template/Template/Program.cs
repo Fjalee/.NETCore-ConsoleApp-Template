@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 namespace Template
 {
     public class Program
@@ -10,7 +11,7 @@ namespace Template
             ConfigureServices(services);
             var serviceProvider = services.BuildServiceProvider();
 
-            //serviceProvider.GetService<IExample>();             //getting example class implementation
+            //serviceProvider.GetService<IExampleClass>();             //getting example class implementation
         }
 
         private static void ConfigureServices(IServiceCollection services)
@@ -18,7 +19,7 @@ namespace Template
             var config = SetupConfiguration();
 
             //services
-            //    .AddTransient<IExampleClass, ExampleClass>();             //injecting example class implementation
+                //.AddTransient<IExampleClass, ExampleClass>();             //injecting example class implementation
         }
 
         private static IConfiguration SetupConfiguration()
