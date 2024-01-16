@@ -13,12 +13,16 @@ namespace Youtube_Playlist_Manager
         {
             var services = new ServiceCollection();
 
+            services.AddAutoMapper(typeof(Program));
+
             services
-                .AddAutoMapper(typeof(Program))
                 .Configure<AppSettingsOptions>(
                     config.GetSection("AppSettings"))
                 .Configure<TestObjectOptions>(
-                    config.GetSection("TestObject"));
+                    config.GetSection("TestObject"))
+                .AddOptions<AppSettingsOptions>()
+                    .Bind(config.GetSection("AppSettings"))
+                    .ValidateDataAnnotations();
 
             services.AddLogging(builder =>
             {
