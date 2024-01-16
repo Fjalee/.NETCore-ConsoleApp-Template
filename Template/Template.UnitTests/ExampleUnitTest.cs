@@ -18,7 +18,7 @@ namespace Template.UnitTests
         //    //var services = ServiceConfigurator.ConfigureServices(
         //    //    ServiceConfigurator.SetupConfiguration());
         //    //var serviceProvider = services.BuildServiceProvider();
-        //    //var config = serviceProvider.GetService<IOptions<AppSettingsOptions>>()?.Value;       //delete this line (its from template)
+        //    //var config = serviceProvider.GetService<IOptions<AppSettingsOptions>>().Value;       //delete this line (its from template)
 
         //    sumTool
         //        .Setup(s => s.Sum(It.IsAny<int>(), It.IsAny<int>()))

@@ -24,8 +24,8 @@ namespace Template
 
             _logger = serviceProvider.GetService<ILogger<Program>>();
 
-            //var config = serviceProvider.GetService<IOptions<AppSettingsOptions>>()?.Value;       //delete this line (its from template)
-            //var testValFromConfig = config?.TestObject?.TestValue;     //delete this line (its from template)
+            //var config = serviceProvider.GetService<IOptions<AppSettingsOptions>>().Value;       //delete this line (its from template)
+            //var testValFromConfig = config.TestObject.TestValue;     //delete this line (its from template)
         }
     }
 
@@ -38,7 +38,7 @@ namespace Template
     //    public ExampleClass(IOptions<AppSettingsOptions> configOptions)
     //    {
     //        _config = configOptions.Value;
-    //        var testValFromConfig = _config?.TestObject?.TestValue;     //delete this line (its from template)
+    //        var testValFromConfig = _config.TestObject.TestValue;     //delete this line (its from template)
     //    }
     //}
 }
