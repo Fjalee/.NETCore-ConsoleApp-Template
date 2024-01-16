@@ -1,9 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using NLog;
-using NLog.Extensions.Logging;
 using Youtube_Playlist_Manager;
 
 namespace Template
@@ -32,4 +28,17 @@ namespace Template
             //var testValFromConfig = config?.TestObject?.TestValue;     //delete this line (its from template)
         }
     }
+
+    //public interface IExampleClass { }       //delete this line (its from template)
+
+    //public class ExampleClass : IExampleClass       //delete this line (its from template)
+    //{
+    //    private readonly AppSettingsOptions _config;
+
+    //    public ExampleClass(IOptions<AppSettingsOptions> configOptions)
+    //    {
+    //        _config = configOptions.Value;
+    //        var testValFromConfig = _config?.TestObject?.TestValue;     //delete this line (its from template)
+    //    }
+    //}
 }
