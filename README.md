@@ -2,7 +2,7 @@
 My personal console app template for .NET Core
 
 # About   
-* Currently for version .NETCore 6.0   
+* Currently for version .NETCore 7.0   
 
 ## How to use   
 * copy paste everything but `.git` folder
