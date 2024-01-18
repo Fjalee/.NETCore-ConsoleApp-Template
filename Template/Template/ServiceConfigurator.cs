@@ -1,11 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NLog.Extensions.Logging;
-using NLog;
 using Microsoft.Extensions.Logging;
-using Template;
+using NLog;
+using NLog.Extensions.Logging;
 
-namespace Youtube_Playlist_Manager
+namespace Template
 {
     public static class ServiceConfigurator
     {
@@ -27,12 +26,12 @@ namespace Youtube_Playlist_Manager
             });
             LogManager.Configuration = new NLogLoggingConfiguration(config.GetSection("NLog"));
 
-            //services
-            //.AddTransient<IExampleClass, ExampleClass>();             //delete this line (its from template) 
+            services
+                .AddTransient<IExceptionsHelper, ExceptionsHelper>();
 
             return services;
         }
-        
+
         public static IConfiguration SetupConfiguration()
         {
             return new ConfigurationBuilder()
