@@ -4,12 +4,14 @@ namespace Template
 {
     public class AppSettingsOptions
     {
-        public required TestObjectOptions TestObject { get; set; }
+        [Required]
+        public TestObjectOptions TestObject { get; set; }
     }
 
     public class TestObjectOptions
     {
+        [Required]
         [MinLength(15, ErrorMessage = "string should be longer than 14 characters")]
-        public required string TestValue { get; set; }
+        public string TestValue { get; set; }
     }
 }
