@@ -8,13 +8,13 @@ namespace Template
     {
         private static ILogger<Program> _logger;
 
-        static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
+        private static void UnhandledExceptionTrapper(object sender, UnhandledExceptionEventArgs e)
         {
-            _logger.LogCritical("Unhandled exception occured\n" + (Exception)e.ExceptionObject);
+            _logger.LogCritical($"Unhandled exception occured\n {(Exception)e.ExceptionObject}");
             throw new Exception("Global Exception Handler");
         }
 
-        static void Main()
+        private static void Main()
         {
             AppDomain.CurrentDomain.UnhandledException += UnhandledExceptionTrapper;
 
