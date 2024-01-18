@@ -3,11 +3,21 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Extensions.Logging;
+using Template.Helpers;
+using Template.Helpers.Interfaces;
 
 namespace Template
 {
     public static class ServiceConfigurator
     {
+        public static IServiceCollection RegisterTemplateServices(this IServiceCollection services)
+        {
+            services
+                .AddTransient<IExceptionsHelper, ExceptionsHelper>();
+
+            return services;
+        }
+
         public static IServiceCollection ConfigureServices(IConfiguration config)
         {
             var services = new ServiceCollection();
@@ -26,8 +36,7 @@ namespace Template
             });
             LogManager.Configuration = new NLogLoggingConfiguration(config.GetSection("NLog"));
 
-            services
-                .AddTransient<IExceptionsHelper, ExceptionsHelper>();
+            services.RegisterTemplateServices();
 
             return services;
         }
